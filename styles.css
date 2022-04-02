@@ -1,0 +1,117 @@
+/* Ferramentas */
+
+/* Fontes */
+.righteous {
+    font-family: 'Righteous', cursive;
+}
+body {
+    /* usando roboto como a fonte padrão e aplicando somente a righteous */
+    /* confiando na hierarquia do CSS (classes são mais específicas que tags logo são prioridade.  */
+    font-family: 'Roboto', sans-serif;
+
+    box-sizing: border-box;
+    background-color: #EEE;
+}
+
+/* Topo */
+
+.header {
+    background-color: #cf2b2b;
+    height: 92px;
+    width: 100%;
+    border: 1px solid #ffc700;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    box-shadow: 0 5px 5px #888;
+}
+.header-container {
+    padding: 20px;
+}
+.header h1 {
+    color: white;
+    font-size: 50px;
+    font-weight: 400;
+}
+.header p {
+    color: white;
+    font-size: 15px;
+}
+
+/* container */
+.conteudo {
+    margin-top: 134px;
+    padding-left: 20px;
+}
+.conteudo  h2 {
+    color: #333;
+    font-size: 30px;
+}
+
+/* seções */
+.secao {
+    margin-bottom: 28px;
+}
+.secao > h3 {
+    font-size: 26px;
+    margin-left: 8px;
+}
+
+.pratos, .bebidas, .sobremesas {
+    display: flex;
+    margin-top: 18px;
+    overflow: scroll;
+}
+
+.prato, .bebida, .sobremesa {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    width: 172px;
+    height: 200px;
+    padding: 15px;
+    margin-right: 16px;
+    border-radius: 10px;
+}
+
+.prato > img, .bebida > img, .sobremesa > img {
+    width: 144px;
+    height: 87px;
+}
+.prato > h4, .bebida > h4, .sobremesa > h4 {
+    font-size: 18px;
+}
+.prato > .descricao, .bebida > .descricao, .sobremesa > .descricao {
+    color: #A6A6A680;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 20px;
+}
+.prato > .preco, .bebida > .preco, .sobremesa > .preco {
+    font-size: 20px;
+}
+
+/* footer */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 92px;
+}
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CBCBCB;
+    width: 364px;
+    height: 62px;
+    border-radius: 40px;
+    border: none;
+    /* texto */
+    color: white;
+    font-size: 18px;
+    /* font-weight: 200; */
+}
