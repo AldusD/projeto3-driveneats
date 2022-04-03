@@ -22,84 +22,94 @@
         <div class="secao">
             <h3 class="righteous">Primeiro, seu prato</h3>
             <div class="pratos">
-                <div class="prato">
+                <div onclick="addSelecionado(this, pratos)" class="prato">
                     <img src="imagens/frango_yin_yang.jpg" alt="MC lanche Feliz">
                     <h4 class="righteous bold">Frango Yin Yang</h4>
                     <p class="descricao">Um pouco de batata,<br> 
                         um pouco de salada</p>
                     <p class="preco">R$ 14,90</p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div class="prato">
+                <div onclick="addSelecionado(this, pratos)" class="prato">
                     <img src="imagens/frango_yin_yang.jpg" alt="MC lanche Feliz">
                     <h4 class="righteous bold">Frango Yin Yang Gourmet</h4>
                     <p class="descricao">Um pouco de batata,<br> 
                         um pouco de salada</p>
                     <p class="preco">R$ 35,00</p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div class="prato">
+                <div onclick="addSelecionado(this, pratos)" class="prato">
                     <img src="imagens/frango_yin_yang.jpg" alt="MC lanche Feliz">
                     <h4 class="righteous bold">Poulet Yinet Yanget</h4>
                     <p class="descricao">Um pouco de batata,<br> 
                         um pouco de salada</p>
                     <p class="preco">R$ 79,90</p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
             </div>
         </div>
         <div class="secao">
             <h3 class="righteous">Agora, sua bebida</h3>
             <div class="bebidas">
-                <div class="bebida">
+                <div onclick="addSelecionado(this, bebidas)" class="bebida">
                     <img src="imagens/coquinha_gelada.jpg" alt="MC lanche Feliz">
                     <h4 class="righteous bold">Coquinha gelada</h4>
                     <p class="descricao">Lata 350ml</p>
                     <p class="preco">R$ 4,90</p>
+                <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div class="bebida">
+                <div onclick="addSelecionado(this, bebidas)" class="bebida">
                     <img src="imagens/coquinha_gelada.jpg" alt="MC lanche Feliz">
                     <h4 class="righteous bold">Coquinha natural</h4>
                     <p class="descricao">Lata 350ml</p>
                     <p class="preco">R$ 3,50</p>
+                <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div class="bebida">
+                <div onclick="addSelecionado(this, bebidas)" class="bebida">
                     <img src="imagens/coquinha_gelada.jpg" alt="MC lanche Feliz">
                     <h4 class="righteous bold">Coquinha quente</h4>
                     <p class="descricao">Lata 350ml</p>
                     <p class="preco">R$ 5,90</p>
+                <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
             </div>
         </div>
         <div class="secao">
-            <h3 class="righteous">Primeiro, seu prato</h3>
-            <div class="pratos">
-                <div class="prato">
-                    <img src="imagens/frango_yin_yang.jpg" alt="MC lanche Feliz">
-                    <h4 class="righteous bold">Coquinha quente</h4>
-                    <p class="descricao">Um pouco de batata,<br> 
-                        um pouco de salada</p>
-                    <p class="preco">R$ 14,90</p>
+            <h3 class="righteous">Por fim, sua sobremesa</h3>
+            <div class="sobremesas">
+                <div onclick="addSelecionado(this, sobremesas)" class="sobremesa">
+                    <img src="imagens/pudim.jpg" alt="MC lanche Feliz">
+                    <h4 class="righteous bold">Pudim</h4>
+                    <p class="descricao">Apenas pudim</p>
+                    <p class="preco">R$ 7,90</p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div class="prato">
-                    <img src="imagens/frango_yin_yang.jpg" alt="MC lanche Feliz">
-                    <h4 class="righteous bold">Frango Yin Yang Gourmet</h4>
-                    <p class="descricao">Um pouco de batata,<br> 
-                        um pouco de salada</p>
-                    <p class="preco">R$ 35,00</p>
+                <div onclick="addSelecionado(this, sobremesas)" class="sobremesa">
+                    <img src="imagens/pudim.jpg" alt="MC lanche Feliz">
+                    <h4 class="righteous bold">Pudim de leite</h4>
+                    <p class="descricao">Pudim de leite</p>
+                    <p class="preco">R$ 9,90</p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div class="prato">
-                    <img src="imagens/frango_yin_yang.jpg" alt="MC lanche Feliz">
-                    <h4 class="righteous bold">Poulet Yinet Yanget</h4>
-                    <p class="descricao">Um pouco de batata,<br> 
-                        um pouco de salada</p>
-                    <p class="preco">R$ 79,90</p>
+                <div onclick="addSelecionado(this, sobremesas)" class="sobremesa">
+                    <img src="imagens/pudim.jpg" alt="MC lanche Feliz">
+                    <h4 class="righteous bold">Pudim Fitness</h4>
+                    <p class="descricao">Pudim 0Cal<p>
+                    <p class="preco">R$ 25,90</p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
             </div>
         </div>
     </div>
     <div class="footer">
-        <button>Selecione os 3 itens
+        <p>Selecione os 3 itens
             <br>
-            para fechar o pedido</button>
+            para fechar o pedido</p>
+        <button>
+            Fazer pedido
+        </button>
     </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
