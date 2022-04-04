@@ -163,6 +163,6 @@ button {
 .pedido-pronto > p {
     display: none;
 }
-.pedido-pronto > button {
+.pedido-pronto button {
     display: flex;
 }

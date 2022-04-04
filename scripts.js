@@ -8,6 +8,13 @@ const fazerPedido = document.querySelector(".footer")
 //valores
 let precos = [0,0,0];
 let seuPedido = ["prato", "bebida", "sobremesa"];
+//whatsapp
+let mensagem;
+let encodedMensagem;
+let whatsappReference;
+// confirmação
+let nome;
+let endereco;
 
 function novoEstado() {
     let temPrato = pratos.querySelector(".selecionado");
@@ -16,6 +23,7 @@ function novoEstado() {
     let pedidoPronto = temPrato && temBebida && temSobremesa
     if(pedidoPronto) {
         fazerPedido.classList.add("pedido-pronto");
+        botaoWhatsapp();
     } else {
         fazerPedido.classList.remove("pedido-pronto")
     }
@@ -48,14 +56,48 @@ function addSelecionado(pedido, secao) {
     //novo estado
     newValues(pedido, secao);
     novoEstado();
+} 
+
+function precoEmNum(){
+    for(let i = 0; i < 3; i++){
+        // if necessário para que em caso de 
+        //mudança no pedido o replace não encontre um
+        // preço de tipo number causando erro e congelamento do pedido
+        if(typeof(precos[i]) !== "number"){
+            precos[i] = precos[i].replace(/,/g, '.')
+            precos[i] = precos[i].replace('R$ ', '');  
+            precos[i] = Number(precos[i]);   
+        }
+    }
 }
-//ainda em desenvolvimento
-function zapZap() {
+
+function nomeEndereco() {
+    nome = prompt("Qual o seu nome?");
+    endereco = prompt("Qual o seu endereço?");
+    
+}
+
+function botaoWhatsapp() {
+    // transformando em números para 
+    //aplicações de expressões matematicas
+    precoEmNum();
     let precoTotal = precos[0] + precos[1] + precos[2];
-    let mensagem = `Olá, gostaria de fazer o pedido:
+
+    // retornando a string com virgula para exibição
+    precoTotal = precoTotal.toFixed(2).replace('.', ',');
+
+    mensagem = `Olá, gostaria de fazer o pedido:
     - Prato: ${seuPedido[0]}
       - Bebida: ${seuPedido[1]}
       - Sobremesa: ${seuPedido[2]}
-      Total: R$ ${precoTotal}`;   
-    let encodedMensagem;
+      Total: R$ ${precoTotal}
+      
+      Nome: ${nome}
+      Endereço: ${endereco}`;   
+      
+      //criando o link para o whatsapp e o adicionando ao botão
+      encodedMensagem = encodeURIComponent(mensagem);
+      whatsappReference = `https://wa.me/5581997456285?text=${encodedMensagem}`;
+      fazerPedido.querySelector("a").setAttribute('href', whatsappReference);
+      console.log("CHEGOU!", mensagem);
 }
