@@ -5,9 +5,11 @@ const pratos = document.querySelector(".pratos");
 const bebidas = document.querySelector(".bebidas");
 const sobremesas = document.querySelector(".sobremesas");
 const fazerPedido = document.querySelector(".footer")
+const modal = document.querySelector(".confirmacao")
+const filtro = document.querySelector(".sem-filtro")
 //valores
-let precos = [0,0,0];
-let seuPedido = ["prato", "bebida", "sobremesa"];
+let precos = [0, 0, 0, 0];
+let seuPedido = ["prato", "bebida", "sobremesa", "Total"];
 //whatsapp
 let mensagem;
 let encodedMensagem;
@@ -15,15 +17,15 @@ let whatsappReference;
 // confirmação
 let nome;
 let endereco;
+let pedidoPronto = false;
 
 function novoEstado() {
     let temPrato = pratos.querySelector(".selecionado");
     let temBebida = bebidas.querySelector(".selecionado");
     let temSobremesa = sobremesas.querySelector(".selecionado");
-    let pedidoPronto = temPrato && temBebida && temSobremesa
+    pedidoPronto = temPrato && temBebida && temSobremesa
     if(pedidoPronto) {
         fazerPedido.classList.add("pedido-pronto");
-        botaoWhatsapp();
     } else {
         fazerPedido.classList.remove("pedido-pronto")
     }
@@ -74,23 +76,47 @@ function precoEmNum(){
 function nomeEndereco() {
     nome = prompt("Qual o seu nome?");
     endereco = prompt("Qual o seu endereço?");
-    
+
+}
+
+function constroiConfirmacao() {
+    if(pedidoPronto){
+        for(let i = 0; i < 4; i++){
+            document.querySelector(`.pedido${i}`).innerHTML = seuPedido[i];
+            document.querySelector(`.valor${i}`).innerHTML = precos[i].toFixed(2).replace('.', ',');
+        }
+        document.querySelector(".valor3").innerHTML = "R$ " + document.querySelector(".valor3").innerHTML; 
+    }
+}
+
+function ativaModal() {
+    modal.classList.add("confirmar-pedido");
+    modal.classList.remove("confirmacao")
+    filtro.classList.remove("sem-filtro");
+}
+function desativaModal() {
+    modal.classList.remove("confirmar-pedido");
+    modal.classList.add("confirmacao")
+    filtro.classList.add("sem-filtro");
 }
 
 function botaoWhatsapp() {
+    nomeEndereco();
+    ativaModal();
+
     // transformando em números para 
     //aplicações de expressões matematicas
     precoEmNum();
-    let precoTotal = precos[0] + precos[1] + precos[2];
+    precos[3] = precos[0] + precos[1] + precos[2];
 
     // retornando a string com virgula para exibição
-    precoTotal = precoTotal.toFixed(2).replace('.', ',');
-
+    precosTexto = precos[3].toFixed(2).replace('.', ',');
+    constroiConfirmacao()
     mensagem = `Olá, gostaria de fazer o pedido:
     - Prato: ${seuPedido[0]}
       - Bebida: ${seuPedido[1]}
       - Sobremesa: ${seuPedido[2]}
-      Total: R$ ${precoTotal}
+      Total: R$ ${precosTexto}
       
       Nome: ${nome}
       Endereço: ${endereco}`;   
@@ -98,6 +124,5 @@ function botaoWhatsapp() {
       //criando o link para o whatsapp e o adicionando ao botão
       encodedMensagem = encodeURIComponent(mensagem);
       whatsappReference = `https://wa.me/5581997456285?text=${encodedMensagem}`;
-      fazerPedido.querySelector("a").setAttribute('href', whatsappReference);
-      console.log("CHEGOU!", mensagem);
+      modal.querySelector("a").setAttribute('href', whatsappReference);
 }
