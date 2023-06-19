@@ -1,5 +1,9 @@
 # Driven Eats
 
+[Leia essa página em português](https://github.com/AldusD/projeto3-driveneats/blob/main/README-pt.md)
+
+[App Deploy](https://driveneats-khaki.vercel.app/)
+
 Driven Eats: your simplified delivery app 
 
 ## About
