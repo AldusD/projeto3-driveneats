@@ -117,7 +117,7 @@ ion-icon {
 .prato > .preco, .bebida > .preco, .sobremesa > .preco {
     font-size: 20px;
 }
-
+ 
 /* footer */
 .footer {
     display: flex;
@@ -181,8 +181,8 @@ ion-icon {
     z-index: 3;
 
     background-color: #50D074;
-    width: 377px;
-    height: 374px;
+    width: 80vw;
+    height: 40vh;
     border-radius: 15px;
     box-shadow: 0 0 10px 2px #888;
     /* texto */
@@ -218,7 +218,7 @@ h5 {
 .c-botoes a {
     color: #50D074;
     background-color: white;
-    width: 334px;
+    width: 80%;
     height: 52px;
     border-radius: 30px;
 
