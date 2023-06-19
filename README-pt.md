@@ -6,7 +6,7 @@
 
 Driven Eats: Seu app simplificado de delivery. 
 
-## About
+## Sobre
 
 Driven Eats é um website para mobile que simula uma aplicação de entregas. Esse é o terceiro projecto do bootcamp de desenvolvimento web full stack da 
 Driven Education o primeiro com o uso de javascipt e foi desenhado para o aprendizado e consolidação das seguintes tecnologias:
@@ -15,7 +15,7 @@ Driven Education o primeiro com o uso de javascipt e foi desenhado para o aprend
 - Básico de HTML 5
 - Páginas dinâmicas com a manipulação de DOM usando Javascript
 
-## How to run for development:
+## Como executar em ambiente de desenvolvimento:
 
 1. Clone esse repositório
 
